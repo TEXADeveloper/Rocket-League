@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3700739084362738593}
   - component: {fileID: 7308585491370515596}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ WheelCollider:
     spring: 35000
     damper: 4500
     targetPosition: 0.5
-  m_SuspensionDistance: 0
+  m_SuspensionDistance: 0.03
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6862196586890788059}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wheel Colliders
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9108610325570130150}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FrontEdge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5561963769200281319}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Particles
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3881649826874749337}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RearEdge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 445095829773451261}
   - component: {fileID: 1277448782769108118}
   - component: {fileID: 1445492331621289432}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fire
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -5026,7 +5026,7 @@ GameObject:
   - component: {fileID: 4705550241588759687}
   - component: {fileID: 7968422903604311293}
   - component: {fileID: 2365929499518442914}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Car
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -5080,7 +5080,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c1e52cef21d0a24e987228df510f8dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positions: []
   rb: {fileID: 7968422903604311293}
+  rayDistance: 0
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 0
   edgeInfos:
   - name: Front
     LeftWheel: {fileID: 7308585491370515596}
@@ -5098,11 +5103,16 @@ MonoBehaviour:
     Steering: 0
   maxMotorTorque: 1000
   maxSteeringAngle: 30
-  turboForce: 0
   brakeTorque: 200
+  turboForce: 0
   turboDecreasePerSecond: 20
   fireParticle: {fileID: 1277448782769108118}
   smokeParticle: {fileID: 3465311616143911153}
+  jumpForce: 0
+  secondJumpForce: 0
+  extraJumps: 1
+  xyRotationSpeed: 0
+  zRotationSpeed: 0
 --- !u!1 &4720949080743288521
 GameObject:
   m_ObjectHideFlags: 0
@@ -5113,7 +5123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8648931793473296796}
   - component: {fileID: 295942790623047546}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5148,7 +5158,7 @@ WheelCollider:
     spring: 35000
     damper: 4500
     targetPosition: 0.5
-  m_SuspensionDistance: 0
+  m_SuspensionDistance: 0.03
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -5174,7 +5184,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7448336592945881304}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FrontEdge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5207,7 +5217,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5694433615985806235}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Visual Wheels
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -5241,7 +5251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8827322850283033340}
   - component: {fileID: 2188102072951344155}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5276,7 +5286,7 @@ WheelCollider:
     spring: 35000
     damper: 4500
     targetPosition: 0.5
-  m_SuspensionDistance: 0
+  m_SuspensionDistance: 0.03
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -5303,7 +5313,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8748975484628222058}
   - component: {fileID: 8188230829622907990}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5338,7 +5348,7 @@ WheelCollider:
     spring: 35000
     damper: 4500
     targetPosition: 0.5
-  m_SuspensionDistance: 0
+  m_SuspensionDistance: 0.03
   m_ForceAppPointDistance: 0
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -5366,7 +5376,7 @@ GameObject:
   - component: {fileID: 5149948005294273655}
   - component: {fileID: 3465311616143911153}
   - component: {fileID: 712949994244037945}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Smoke
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -10185,7 +10195,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6302152797287023548}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RearEdge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10264,6 +10274,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Right
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8ab4a6d83ea81414c8c1e94921566b02, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: 8ab4a6d83ea81414c8c1e94921566b02, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.05
@@ -10291,6 +10305,10 @@ PrefabInstance:
     - target: {fileID: 1151388028547126963, guid: 8ab4a6d83ea81414c8c1e94921566b02, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 8ab4a6d83ea81414c8c1e94921566b02, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab4a6d83ea81414c8c1e94921566b02, type: 3}
@@ -10354,6 +10372,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Right
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8ab4a6d83ea81414c8c1e94921566b02, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: 8ab4a6d83ea81414c8c1e94921566b02, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.05
@@ -10381,6 +10403,10 @@ PrefabInstance:
     - target: {fileID: 1151388028547126963, guid: 8ab4a6d83ea81414c8c1e94921566b02, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 8ab4a6d83ea81414c8c1e94921566b02, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab4a6d83ea81414c8c1e94921566b02, type: 3}
@@ -10445,6 +10471,10 @@ PrefabInstance:
       value: Car
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f07f0ae5255af6446ba3c1df608d52b8, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f07f0ae5255af6446ba3c1df608d52b8, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
@@ -10467,6 +10497,10 @@ PrefabInstance:
     - target: {fileID: 1151388028547126963, guid: f07f0ae5255af6446ba3c1df608d52b8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: f07f0ae5255af6446ba3c1df608d52b8, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f07f0ae5255af6446ba3c1df608d52b8, type: 3}
@@ -10548,6 +10582,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Left
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8ab4a6d83ea81414c8c1e94921566b02, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: 8ab4a6d83ea81414c8c1e94921566b02, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.05
@@ -10575,6 +10613,10 @@ PrefabInstance:
     - target: {fileID: 1151388028547126963, guid: 8ab4a6d83ea81414c8c1e94921566b02, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 8ab4a6d83ea81414c8c1e94921566b02, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab4a6d83ea81414c8c1e94921566b02, type: 3}
@@ -10638,6 +10680,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Left
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8ab4a6d83ea81414c8c1e94921566b02, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: 8ab4a6d83ea81414c8c1e94921566b02, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.05
@@ -10665,6 +10711,10 @@ PrefabInstance:
     - target: {fileID: 1151388028547126963, guid: 8ab4a6d83ea81414c8c1e94921566b02, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 8ab4a6d83ea81414c8c1e94921566b02, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab4a6d83ea81414c8c1e94921566b02, type: 3}

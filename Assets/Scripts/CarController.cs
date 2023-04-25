@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 
 public class CarController : MonoBehaviour {
+    [SerializeField] private Transform[] positions;
     [SerializeField] private Rigidbody rb;
     [SerializeField] private float rayDistance;
     [SerializeField] private LayerMask groundMask;
@@ -38,6 +39,18 @@ public class CarController : MonoBehaviour {
     private Quaternion initialRotation = Quaternion.identity;
     
 
+    void Start()
+    {
+        Goal.Score += reposition;
+        reposition();
+    }
+
+    private void reposition()
+    {
+        int random = Random.Range(0, positions.Length);
+        transform.position = positions[random].position;
+        transform.rotation = positions[random].rotation;
+    }
 
 
     void Update()
@@ -54,6 +67,9 @@ public class CarController : MonoBehaviour {
         if (Input.GetButtonDown("Jump") && (grounded || (!grounded && jumps > 0)))
             jump();
         airRotation = Input.GetButton("Rotate");
+
+        if (Input.GetButtonDown("Cancel"))
+            Application.Quit();
     }
 
     private void checkGround()
@@ -206,5 +222,10 @@ public class CarController : MonoBehaviour {
     void OnDrawGizmosSelected()
     {
         Debug.DrawRay(transform.position, transform.up * - 1 * rayDistance);
+    }
+
+    void OnDisable()
+    {
+        Goal.Score -= reposition;
     }
 }
